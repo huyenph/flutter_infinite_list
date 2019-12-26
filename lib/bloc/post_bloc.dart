@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:bloc/bloc.dart';
 
 import 'package:flutter_infinite_list/bloc/bloc.dart';
-import 'package:flutter_infinite_list/model/post.dart';
+import 'package:flutter_infinite_list/model/model.dart';
 
 class PostBloc extends Bloc<PostEvent, PostState> {
   final http.Client httpClient;

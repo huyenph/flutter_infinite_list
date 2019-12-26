@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_infinite_list/bloc/bloc.dart';
-import 'package:flutter_infinite_list/model/post.dart';
+import 'package:flutter_infinite_list/model/model.dart';
 
 abstract class PostState extends Equatable {
   const PostState();
@@ -20,16 +19,23 @@ class PostLoaded extends PostState {
   final List<Post> posts;
   final bool hasReachedMax;
 
-  const PostLoaded({this.posts, this.hasReachedMax});
+  const PostLoaded({
+    this.posts,
+    this.hasReachedMax,
+  });
 
-  PostLoaded copyWith({List<Post> posts, bool hasReachedMax}) {
+  PostLoaded copyWith({
+    List<Post> posts,
+    bool hasReachedMax,
+  }) {
     return PostLoaded(
-        posts: posts ?? this.posts,
-        hasReachedMax: hasReachedMax ?? this.hasReachedMax);
+      posts: posts ?? this.posts,
+      hasReachedMax: hasReachedMax ?? this.hasReachedMax,
+    );
   }
 
-  @override
-  List<Object> get props => [props, hasReachedMax];
+  // @override
+  // List<Object> get props => [posts, hasReachedMax];
 
   @override
   String toString() =>
